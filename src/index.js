@@ -27,3 +27,14 @@ function multi(a) {
 
 let result1 = multi(2)(5);
 const multiple = (a) => (b) => a * b; //same as above in arrow function syntax
+
+//Immutability in OBJECTS
+
+//Object.assign() Method
+const employee = { name: "Harley", age: 22 };
+const newEmployee = Object.assign({}, employee, { name: "Martin" });
+
+// Object.assign(predefined obj we want to target, Object to update, objectpassing values to update or add)
+
+console.log(employee);
+console.log(newEmployee);
