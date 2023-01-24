@@ -31,10 +31,27 @@ const multiple = (a) => (b) => a * b; //same as above in arrow function syntax
 //Immutability in OBJECTS
 
 //Object.assign() Method
-const employee = { name: "Harley", age: 22 };
-const newEmployee = Object.assign({}, employee, { name: "Martin" });
+const employee = {
+  name: "Harley",
+  age: 22,
+  company: { country: "Canada", city: "Toronto" },
+};
+// const newEmployee = Object.assign({}, employee, { name: "Martin" });
 
 // Object.assign(predefined obj we want to target, Object to update, objectpassing values to update or add)
+
+// const newEmployee = { ...employee, name: "Martin" };
+//using spread operator to copy an object, CAREFUL it stores both company objects on the same address in the memory = shallow copy issue. Only top levbel Objects will get a deep copied.
+
+// newEmployee.company.city = "Calgary";
+//in this case both employee and newEmployee Object now have the new city reassigned
+
+//-> what to do? spread operators in every Object
+const newEmployee = {
+  ...employee,
+  name: "Martin",
+  company: { ...employee.company, city: "Calgary" },
+};
 
 console.log(employee);
 console.log(newEmployee);
