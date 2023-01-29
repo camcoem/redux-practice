@@ -48,13 +48,14 @@ const employee = {
 //in this case both employee and newEmployee Object now have the new city reassigned
 
 //-> what to do? spread operators in every Object
-const newEmployee = {
-  ...employee,
-  name: "Martin",
-  company: { ...employee.company, city: "Calgary" },
-};
+// const newEmployee = {
+//   ...employee,
+//   name: "Martin",
+//   company: { ...employee.company, city: "Calgary" },
+// };
+
+//immer library add and import produce fn
+produce(employee, () => {});
 
 console.log(employee);
 console.log(newEmployee);
-
-//immer library add and import produce fn
