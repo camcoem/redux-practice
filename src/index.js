@@ -54,8 +54,13 @@ const employee = {
 //   company: { ...employee.company, city: "Calgary" },
 // };
 
-//immer library add and import produce fn
-produce(employee, () => {});
+//immer library add and import produce fn --> arg: 1. Obj 2. callback function. In the 2. we can write mutable code.
+produce(employee, (draftState) => {
+  draftState.name = "Martin";
+  draftState.company.city = "Calgary";
+});
+
+//draftState is recommended from immer as a name
 
 console.log(employee);
 console.log(newEmployee);
