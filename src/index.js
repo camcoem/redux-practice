@@ -55,7 +55,8 @@ const employee = {
 // };
 
 //immer library add and import produce fn --> arg: 1. Obj 2. callback function. In the 2. we can write mutable code.
-produce(employee, (draftState) => {
+
+const newEmployee = produce(employee, (draftState) => {
   draftState.name = "Martin";
   draftState.company.city = "Calgary";
 });
